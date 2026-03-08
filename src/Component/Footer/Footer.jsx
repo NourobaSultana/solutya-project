@@ -2,10 +2,12 @@ import React from "react";
 import { CgMail } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import Ready from "../../Pages/Home/Ready";
 
 const Footer = () => {
   return (
     <div>
+      <Ready></Ready>
       <footer className="bg-black text-base-content px-6 md:px-16 py-20 flex flex-col gap-8">
         {/* Top section */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 w-full">

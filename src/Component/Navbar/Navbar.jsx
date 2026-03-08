@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
+import Banner from "../../Pages/Home/Banner";
 
 const Navbar = () => {
   const links = (

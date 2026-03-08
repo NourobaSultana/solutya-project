@@ -1,92 +1,54 @@
 import React from "react";
-import { FcGoogle } from "react-icons/fc";
 import theme from "../../assets/themeforest.png";
+
 const OurServices = () => {
-  return (
-    <div>
-      <section class="companies-section ">
-        <div class="container text-center">
-          {/* <!-- Right Content --> */}
-          <div class="company-content">
-            <h2 class="title font-bold texl-2xl mb-4">
-              Trusted by Leading Companies
-            </h2>
+  const companiesFirstRow = [
+    { name: "VideoHive", logo: theme },
+    { name: "CodeCanyon", logo: theme },
+    { name: "GraphicRiver", logo: theme },
+    { name: "ThemeForest", logo: theme },
+  ];
 
-            {/* <!-- First Row --> */}
-            <div className="flex flex-col items-center gap-6">
-              {/* First Row */}
-              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="VideoHive logo"
-                  />
-                  <span className="text-sm md:text-base">VideoHive</span>
-                </div>
+  const companiesSecondRow = [
+    { name: "VideoHive", logo: theme },
+    { name: "CodeCanyon", logo: theme },
+    { name: "GraphicRiver", logo: theme },
+  ];
 
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="CodeCanyon logo"
-                  />
-                  <span className="text-sm md:text-base">CodeCanyon</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="GraphicRiver logo"
-                  />
-                  <span className="text-sm md:text-base">GraphicRiver</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="ThemeForest logo"
-                  />
-                  <span className="text-sm md:text-base">ThemeForest</span>
-                </div>
-              </div>
-
-              {/* Second Row */}
-              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="VideoHive logo"
-                  />
-                  <span className="text-sm md:text-base">VideoHive</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="CodeCanyon logo"
-                  />
-                  <span className="text-sm md:text-base">CodeCanyon</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <img
-                    className="w-10 md:w-12 lg:w-14"
-                    src={theme}
-                    alt="GraphicRiver logo"
-                  />
-                  <span className="text-sm md:text-base">GraphicRiver</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  const CompanyCard = ({ logo, name }) => (
+    <div className="flex flex-col items-center gap-2">
+      <img
+        className="w-12 sm:w-14 md:w-16 lg:w-20 object-contain"
+        src={logo}
+        alt={`${name} logo`}
+      />
+      <span className="text-base font-bold alfa-slab-one">{name}</span>
     </div>
+  );
+
+  return (
+    <section className="companies-section py-16">
+      <div className="container mx-auto text-center px-6">
+        {/* Heading */}
+        <h2 className="text-4xl font-bold alfa-slab-one mb-12">
+          Our services/products are trusted by industry leaders
+        </h2>
+
+        {/* First Row */}
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 mb-10">
+          {companiesFirstRow.map((company, idx) => (
+            <CompanyCard key={idx} logo={company.logo} name={company.name} />
+          ))}
+        </div>
+
+        {/* Second Row */}
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-8">
+          {companiesSecondRow.map((company, idx) => (
+            <CompanyCard key={idx} logo={company.logo} name={company.name} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

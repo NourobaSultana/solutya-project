@@ -185,7 +185,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-400">
+    <section className="py-20 bg-gradient-to-r from-blue-900/90 via-blue-700/70 to-blue-400/50">
       <div className="max-w-7xl mx-auto px-6 text-white text-center">
         <h1 className="text-5xl font-bold mb-6">
           Improve efficiency <br /> Through time tracking

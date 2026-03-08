@@ -28,8 +28,10 @@ const Graph = () => {
       {
         label: "Hours",
         data: [4.2, 6.2, 8.6, 6.2, 0],
-        backgroundColor: "rgba(59,130,246,0.8)", // blue
-        borderRadius: 5,
+        backgroundColor: "#4364DB", // blue
+        borderRadius: 18,
+        barThickness: 32,
+        maxBarThickness: 40,
       },
     ],
   };
@@ -51,17 +53,17 @@ const Graph = () => {
   };
 
   return (
-    <div className="py-16 px-4 md:px-10 bg-white">
+    <div className="py-16 px-4 md:px-10 bg-gray-50">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
-        {/* Left Side - Card */}
+        {/* Left Side - Chart Card */}
         <div className="flex-1 relative bg-white rounded-xl p-6 sm:p-8 shadow-md flex flex-col">
-          {/* L-shaped border */}
+          {/* L-shaped borders */}
           <div className="absolute top-0 left-0 h-full w-full pointer-events-none">
             <div className="absolute top-0 left-0 w-2 sm:w-3 h-full bg-blue-500 rounded-l-xl"></div>
             <div className="absolute top-0 left-0 w-full h-2 sm:h-3 bg-blue-500 rounded-t-xl"></div>
           </div>
 
-          {/* Card Title & Text */}
+          {/* Title & Description */}
           <h3 className="text-xl sm:text-2xl font-bold mb-2 text-center z-10 relative">
             Work Progress Overview
           </h3>
@@ -72,31 +74,31 @@ const Graph = () => {
 
           {/* Top Stats */}
           <div className="flex flex-wrap gap-4 justify-center mb-6 z-10 relative">
-            <div className="flex-1 min-w-[80px]">
+            <div className="flex-1 min-w-[80px] text-center">
               <h4 className="font-bold text-sm sm:text-base">36h</h4>
               <p className="text-gray-500 text-xs sm:text-sm">Total Hr</p>
             </div>
-            <div className="flex-1 min-w-[80px]">
+            <div className="flex-1 min-w-[80px] text-center">
               <h4 className="font-bold text-sm sm:text-base">32h 20m</h4>
-              <p className="text-gray-500 text-xs sm:text-sm">Efc. Time</p>
+              <p className="text-gray-500 text-xs sm:text-sm">Eff. Time</p>
             </div>
-            <div className="flex-1 min-w-[80px]">
+            <div className="flex-1 min-w-[80px] text-center">
               <h4 className="font-bold text-sm sm:text-base">24h 4m</h4>
-              <p className="text-gray-500 text-xs sm:text-sm">Non-Efc</p>
+              <p className="text-gray-500 text-xs sm:text-sm">Non-Eff.</p>
             </div>
-            <div className="flex-1 min-w-[80px]">
+            <div className="flex-1 min-w-[80px] text-center">
               <h4 className="font-bold text-sm sm:text-base">95%</h4>
               <p className="text-gray-500 text-xs sm:text-sm">Productivity</p>
             </div>
           </div>
 
-          {/* Chart fills remaining space */}
-          <div className="flex-1 h-full px-2 sm:px-4">
+          {/* Chart */}
+          <div className="flex-1 h-64 sm:h-80 px-2 sm:px-4">
             <Bar data={data} options={options} />
           </div>
         </div>
 
-        {/* Right Side */}
+        {/* Right Side - Features */}
         <div className="flex-1 flex flex-col space-y-6 bg-white rounded-xl p-6 sm:p-8 shadow-md">
           <h3 className="text-2xl sm:text-3xl font-bold">
             Simplify scheduling processes for all tasks
@@ -107,17 +109,14 @@ const Graph = () => {
             consequatur hic ab facere.
           </p>
 
-          {/* 3 Stacked Blocks with dotted line */}
-          <div className="relative space-y-8 mt-6 pl-10 flex-1">
-            {/* Vertical dotted line */}
+          {/* Vertical dotted timeline */}
+          <div className="relative pl-10 flex-1 space-y-8 mt-6">
             <div className="absolute left-4 top-0 bottom-0 border-l-2 border-dotted border-gray-300"></div>
 
-            {/* Item 1 */}
+            {/* Feature Item 1 */}
             <div className="flex items-start gap-3 relative z-10">
               <div className="flex-shrink-0">
-                <span className="text-2xl text-blue-500">
-                  <FaDownload />
-                </span>
+                <FaDownload className="text-2xl text-blue-500" />
               </div>
               <div>
                 <h4 className="font-bold text-base sm:text-lg">
@@ -129,12 +128,10 @@ const Graph = () => {
               </div>
             </div>
 
-            {/* Item 2 */}
+            {/* Feature Item 2 */}
             <div className="flex items-start gap-3 relative z-10">
               <div className="flex-shrink-0">
-                <span className="text-2xl text-green-500">
-                  <IoCreateOutline />
-                </span>
+                <IoCreateOutline className="text-2xl text-green-500" />
               </div>
               <div>
                 <h4 className="font-bold text-base sm:text-lg">
@@ -146,12 +143,10 @@ const Graph = () => {
               </div>
             </div>
 
-            {/* Item 3 */}
+            {/* Feature Item 3 */}
             <div className="flex items-start gap-3 relative z-10">
               <div className="flex-shrink-0">
-                <span className="text-2xl text-purple-500">
-                  <FaBusinessTime />
-                </span>
+                <FaBusinessTime className="text-2xl text-purple-500" />
               </div>
               <div>
                 <h4 className="font-bold text-base sm:text-lg">
