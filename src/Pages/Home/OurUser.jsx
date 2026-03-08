@@ -8,11 +8,12 @@ const OurUser = () => {
           {/* Heading */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
-              Our Amazing Features
+              Our User friendly interface allows for <br /> easy management of
+              task
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Discover how our platform helps you manage projects, collaborate
-              with teams, and grow your business efficiently.
+              The Simple Solution to Task Management: Our Interface Offers an
+              easy <br /> an Efficient Way to Manage Your Task
             </p>
           </div>
 
